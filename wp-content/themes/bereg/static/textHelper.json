@@ -1,0 +1,44 @@
+{
+  "ua": {
+    "helperFloor": {
+      "noSale": "Будинок не у продажу",
+      "house": "Будинок",
+      "floor": "поверх"
+    },
+    "helperAll": "Оберіть </br>будинок",
+    "layout": {
+      "FloorTitle" : "Оберіть квартиру",
+      "FloorName" : "поверх",
+      "HouseName" : "будинок",
+      "selectFloor": "Змінити поверх"
+    }
+  },
+  "ru": {
+    "helperFloor": {
+      "noSale": "Дом не в продаже",
+      "house": "Дом",
+      "floor": "этаж"
+    },
+    "helperAll": "Выберите </br> дом",
+    "layout": {
+      "FloorTitle" : "Выберите квартиру",
+      "FloorName" : "этаж",
+      "HouseName" : "дом",
+      "selectFloor": "Сменить этаж"
+    }
+  },
+  "en": {
+    "helperFloor": {
+      "noSale": "The house is not for sale",
+      "house": "house",
+      "floor": "floor"
+    },
+    "helperAll": "Select </br>a house",
+    "layout": {
+      "FloorTitle" : "Select an apartment",
+      "FloorName" : "floor",
+      "HouseName" : "house",
+      "selectFloor": "Change Floor"
+    }
+  }
+}

@@ -1,0 +1,147 @@
+extends ../layout/main
+block variable
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet' href="./static/main.min.css")
+    link(rel='stylesheet' href="./assets/s3d/styles/3d.min.css")
+    //link(rel='stylesheet' href="static/magnific-popup/magnific-popup.css")
+block scripts
+    script(src='./static/jquery.min.js')
+    script(src='assets/s3d/scripts/vendors.bundle.js')
+    script(src='assets/s3d/scripts/index.bundle.js')
+    //script(src='static/magnific-popup/jquery.magnific-popup.min.js')
+
+block content
+    .page__inner
+        section.main
+            .js-s3d__slideModule
+                // include ../includes/helpsInfo.html
+                div#js-s3d__wrapper
+                    include ../includes/loader.html
+                div.s3d-controller.js-s3d-controller.unselectable
+                    button(type='button' class='js-s3d-filter__open s3d-filter__open')
+                        +svg('filter')
+                        | filter
+                        span.s3d-filter__open-num.js-s3d-filter__open-num
+                    .s3d-controller__elem.js-s3d-controller__elem
+                        button.s3d-select.js-s3d-select.active(type='button' data-type='complex')
+                             +svg('cube')
+                             span genplan
+                        button.s3d-select.js-s3d-select(type='button' data-type='floor' disabled)
+                            +svg('floor-plan')
+                            span Floor
+                        button.s3d-select.js-s3d-select(type='button' data-type='apart' disabled)
+                            +svg('flat-plan')
+                            span Apartment
+                    .s3d-filter__show.js-s3d-filter__show
+                        span Підсвітити поверхи
+                        input(class='js-s3d-filter__show--input' id='filter-show' type='checkbox')
+                        //label(for="filter-show")
+                        //    span
+                    //.s3d-controller__help.js-open-helpsInfo
+                    //    img(src='/wp-content/themes/bereg/assets/s3d/images/icon/help.svg')
+                    .s3d-filter__plan
+                        span План-схема
+                        input(type='checkbox' id="plan3d").s3d-filter__plan-switch-input.js-switch-btn
+                        label(for="plan3d").s3d-filter__plan-switch
+                        span 3D планування
+                    .s3d-filter__compass
+                        +svg('Compass')
+                .s3d-filter.js-s3d-filter
+                    .s3d-filter__title
+                        |Фільтр
+                        .s3d-filter__close.js-s3d-filter__close
+                            span
+                            span
+
+                    .s3d-filter__rooms.js-s3d-filter__rooms.js-s3d-filter__select
+                        .s3d-filter-select__title Кімнат
+                        .s3d-filter-select__list
+                            .s3d-filter-select__input--wrap
+                                input( class='js-s3d-filter__rooms--input' type='checkbox' data-type='rooms' data-rooms=1 id='rooms-1' )
+                                label.s3d-filter__rooms--label(for='rooms-1')
+                                    | 1
+                            .s3d-filter-select__input--wrap
+                                input( class='js-s3d-filter__rooms--input' type='checkbox' data-type='rooms' data-rooms=3 id='rooms-3' )
+                                label.s3d-filter__rooms--label(for='rooms-3')
+                                    | 3
+                    .s3d-filter__floor.js-s3d-filter__floor
+                        .s3d-filter-select__title Поверх
+                        .s3d-filter-select__list.js-filter-range
+                            input(class='js-s3d-filter__floor--input' data-type='floor' data-min=1 data-max=22 data-hide-from-to=true)
+                        .s3d-filter-select__list.js-filter-input
+                            label
+                                | з
+                                input(type='number' class='js-s3d-filter__floor__min--input')
+                            label
+                                | по
+                                input(type='number' class='js-s3d-filter__floor__max--input')
+                    .s3d-filter__area.js-s3d-filter__area
+                        .s3d-filter-select__title Загальна площа м2
+                        .s3d-filter-select__list.js-s3d-filter-range
+                            input(class='js-s3d-filter__area--input' data-type='area' data-min=0 data-max=12000 data-from=0 data-to=12000 data-hide-from-to=true)
+                        .s3d-filter-select__list.js-filter-input
+                            label
+                                | з
+                                input(type='number' class='js-s3d-filter__area__min--input' inputmode="numeric")
+                            label
+                                | по
+                                input(type='number' class='js-s3d-filter__area__max--input' inputmode="numeric")
+                    .s3d-filter__living-space.js-s3d-filter__living-space
+                        .s3d-filter-select__title Житлова площа м2
+                        .s3d-filter-select__list.js-filter-range
+                            input(class='js-s3d-filter__living--input' data-type='living' data-min=0 data-max=12000 data-hide-from-to=true)
+                        .s3d-filter-select__list.js-filter-input
+                            label
+                                | з
+                                input(type='number' class='js-s3d-filter__living__min--input' inputmode="numeric")
+                            label
+                                | по
+                                input(type='number' class='js-s3d-filter__living__max--input' inputmode="numeric")
+                    .s3d-filter__buttons.js-s3d-filter__buttons
+                        .s3d-filter__amount-flat Знайдено
+                            span.s3d-filter__amount-flat__num.js-s3d-filter__amount-flat__num 25
+                        button(type='button').js-s3d-filter__button--reset.s3d-filter__button--reset Скинути параметри
+                            +svg('close').s3d-filter__button--reset-icon
+                        button(type='button').js-s3d-filter__button--apply.s3d-filter__button--apply показати на генплані
+
+
+                .translate-layer
+                    .translate-layer--2
+                    .translate-layer--3
+                    .translate-layer--4
+                    .translate-layer--5
+                .s3d-floor__helper
+                    .s3d-floor__helper-logo
+                        img( src="./assets/s3d/images/icon/small-logo.svg")
+                        //img( src='.get_template_directory_uri().'+"/assets/s3d/images/icon/small-logo.svg")
+                    .s3d-floor__helper-close
+                        img( src="./assets/s3d/images/icon/close.svg")
+                    .s3d-floor__helper-img
+                        img(src="" class="js-s3d-floor__helper-img")
+                    .s3d-floor__helper-type
+                        |Апартаменты:
+                        span.js-s3d-floor__helper-type
+                    .s3d-floor__helper-flat
+                        | Кімнат:
+                        .js-s3d-floor__helper-flat
+                    .s3d-floor__helper-area
+                        | Житл. пл:
+                        .js-s3d-floor__helper-area
+                            span м2
+                    .s3d-floor__helper-place
+                        | Заг. пл:
+                        .js-s3d-floor__helper-place
+                        | м2
+                    button(type='button').button.s3d-floor__helper-button.js-s3d-floor__helper-button
+                    .s3d-floor__helper-bg
+block footer
+    footer.page__footer-wrapper.s3d__footer
+        include ../includes/footer
+
+block header
+    header.header
+        include ../includes/header.pug
+

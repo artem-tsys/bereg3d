@@ -1,0 +1,19 @@
+
+<form class="form__commercial">
+  <legend class="form__title">Запрос на коммерческое предложение<span class="form__close js-form__close"></span></legend>
+  <!-- обязательно-->
+  <input class="form__input js-form__input" type="text" placeholder="Имя:*"/><span class="form__info"></span>
+  <!-- обязательно-->
+  <input class="form__input js-form__input" type="tel" placeholder="Телефон:*"/><span class="form__info"></span>
+  <!-- обязательно-->
+  <input class="form__input js-form__input" type="email" placeholder="E-mail:*"/><span class="form__info"></span>
+  <!-- обязательно-->
+  <input class="form__input js-form__input" type="text" placeholder="Код изделия:*"/><span class="form__info"></span>
+  <!-- обязательно-->
+  <input class="form__input js-form__input" type="text" placeholder="Регион строительства:*"/><span class="form__info"></span>
+  <textarea class="form__input form__commercial--textarea" placeholder="Укажите назначение здания: желаемые габариты, класс исполнения и необходимое оборудование. Если у Вас свой проект - прикрепите его ниже."></textarea>
+  <label class="form__file"><img class="form__file-img" src="assets/images/icon/attach.svg"/>Прикрепить файл
+    <input class="js-form__input" type="file" multiple="multiple" onchange="handleFiles(this)" value="value"/>
+  </label><img class="captcha" src="assets/images/newCaptchaAnchor.gif"/>
+  <button class="js-form__submit form__submit button-xxxl" type="submit" value="отправить">отправить</button>
+</form>

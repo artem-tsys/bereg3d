@@ -1,0 +1,24 @@
+{
+  "complex": {
+    "6": {
+      "path": "/wp-content/themes/boston/assets/s3d/images/svg/complex/6.svg",
+      "dir": "/wp-content/themes/boston/assets/s3d/images/svg/complex/",
+      "name": "6.svg"
+    },
+    "43": {
+      "path": "/wp-content/themes/boston/assets/s3d/images/svg/complex/43.svg",
+      "dir": "/wp-content/themes/boston/assets/s3d/images/svg/complex/",
+      "name": "43.svg"
+    },
+    "63": {
+      "path": "/wp-content/themes/boston/assets/s3d/images/svg/complex/63.svg",
+      "dir": "/wp-content/themes/boston/assets/s3d/images/svg/complex/",
+      "name": "63.svg"
+    },
+    "89": {
+      "path": "/wp-content/themes/boston/assets/s3d/images/svg/complex/89.svg",
+      "dir": "/wp-content/themes/boston/assets/s3d/images/svg/complex/",
+      "name": "89.svg"
+    }
+  }
+}

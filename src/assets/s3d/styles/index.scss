@@ -1,0 +1,66 @@
+.header{
+  display: none;
+}
+ .active {
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   opacity: 1
+ }
+
+ .close {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   display: inline-block;
+   width: 30px;
+   height: 30px;
+   cursor: pointer;
+   z-index: 120;
+   -webkit-transform: translateX(-50%);
+   -ms-transform: translateX(-50%);
+   transform: translateX(-50%)
+ }
+
+ .close:hover::after {
+   -webkit-transform: rotate(-45deg) scale(1.2);
+   -ms-transform: rotate(-45deg) scale(1.2);
+   transform: rotate(-45deg) scale(1.2)
+ }
+
+ .close:hover::before {
+   -webkit-transform: rotate(45deg) scale(1.2);
+   -ms-transform: rotate(45deg) scale(1.2);
+   transform: rotate(45deg) scale(1.2)
+ }
+
+ .close:hover::before,.close:hover::after {
+   background: #8fac5c
+ }
+
+ .close::before,.close::after {
+   content: "";
+   position: absolute;
+   height: 3px;
+   width: 100%;
+   top: 50%;
+   left: 0;
+   margin-top: -1px;
+   background: #fff;
+   -webkit-transition: .3s all linear;
+   -o-transition: .3s all linear;
+   transition: .3s all linear
+ }
+
+ .close::before {
+   -webkit-transform: rotate(45deg);
+   -ms-transform: rotate(45deg);
+   transform: rotate(45deg)
+ }
+
+ .close::after {
+   -webkit-transform: rotate(-45deg);
+   -ms-transform: rotate(-45deg);
+   transform: rotate(-45deg)
+ }
+

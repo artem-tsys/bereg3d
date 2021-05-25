@@ -1,0 +1,29 @@
+form.form__project
+    legend.form__title Расчитать свой проект
+        //+svg('close', 'form__close')
+        span.form__close.js-form__close
+    // обязательно
+    input(type='text' name='name' placeholder='Имя:*').form__input.js-form__input
+    span.form__info
+    // обязательно
+    input(type='tel' name='tel' placeholder='Телефон:*').form__input.js-form__input
+    span.form__info
+
+    // обязательно
+    input(type='email' name='mail' placeholder='E-mail:*').form__input.js-form__input
+    span.form__info
+
+    // обязательно
+    input(type='text' name='region' placeholder='Регион строительства:*').form__input.js-form__input
+    span.form__info
+
+    textarea( name='text' placeholder='Укажите назначение здания: желаемые габариты, класс исполнения и необходимое оборудование. Если у Вас свой проект - прикрепите его ниже.').form__input.form__commercial--textarea
+
+    label.form__file
+        img(src='assets/images/icon/attach.svg').form__file-img
+        | Прикрепить файл
+        span.form__file--description Для быстрого взаимопонимания - от Вас нужна планировка, можно от руки
+        input(type='file' multiple onchange="handleFiles(this)" value='value').js-form__input
+    img(src='assets/images/newCaptchaAnchor.gif').captcha
+
+    button(type='submit' value='отправить').js-form__submit.form__submit.button-xxxl отправить

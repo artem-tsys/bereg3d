@@ -1,0 +1,56 @@
+$padding-wrap: 45px;
+$padding-wrap--small: 20px;
+
+$--bg : #FF1E3C;
+//$--bg : #71A461;
+$--bg-opacity : rgba(255,30,60, 0.6);
+
+
+$default-font: "gilroy",
+sans-serif;
+$default-font2: "montser",
+sans-serif;
+
+$mc2: #FF554C;
+$mc3: #E5DF06;
+$mc4: #4F90B6;
+$gray:rgb(135, 135, 151);
+$text: #22223E;
+$wc: #fff;
+$bc: #000;
+$bc2: #000;
+
+$mc: #1A2941;
+$bg: #FAFAFA;
+$light: #FCFCFC;
+$dark: #1A2941;
+$gold: #CFA46E;
+:root {
+  --in: cubic-bezier(0.13, 0.81, 0.23, 0.96);
+  --header-h: 120px;
+  --logo-w: 160px;
+  --sliceFigure: 239px;
+  --sliceFigure-big: 541px;
+}
+
+@media screen and (max-width: 1440px){
+  :root {
+    --header-h: 90px;
+    --logo-w: 120px;
+    --sliceFigure-big: 362px;
+  }
+}
+@media screen and (max-width: 992px){
+  :root {
+    --header-h: 110px;
+    --logo-w: 90px;
+    --sliceFigure-big: 44px;
+  }
+}
+@media screen and (max-width: 576px){
+  :root {
+    --header-h: 70px;
+    --sliceFigure: 100px;
+    --sliceFigure-big: 100px;
+  }
+}

@@ -1,0 +1,47 @@
+<svg id="floor--svg"  viewBox="0 0 1920 1080" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" xmlns="http://www.w3.org/2000/svg"
+		 style="background-image: url(&quot;/img/projects/1/39-1592293383-1920x85-.jpg&quot;);
+		 background-size: contain;background-repeat: no-repeat;background-position: center center;">
+		<polygon data-sec="1" data-build="null" data-floor="1" class="floor-svg-polygon" points="954,235,1064,227,1283,257,1282,624,1066,655,952,648"></polygon>
+		<polygon data-sec="1" data-build="2" data-floor="6" class="floor-svg-polygon" points="573.5,599.5,651,603,894.5,583,895.5,596.5,656.5,621,571.5,616.5"></polygon>
+		<polygon data-sec="1" data-build="2" data-floor="7" class="floor-svg-polygon" points="568.5,582.5,652,587,894,565,894,582,651,603,574,599"></polygon>
+		<polygon data-sec="1" data-build="2" data-floor="8" class="floor-svg-polygon" points="572,564.5,653.5,567.5,892.5,550.5,892.5,564.5,653.5,586.5,569,581"></polygon>
+		<polygon data-sec="1" data-build="2" data-floor="9" class="floor-svg-polygon" points="568,546.5,656.5,550.5,893.5,533.5,891.5,550.5,655,567.5,573,563.5"></polygon>
+		<polygon data-sec="1" data-build="2" data-floor="10" class="floor-svg-polygon" points="573.5,529.5,653.5,532,891.5,518,891,533,656.5,550.5,568.5,545.5"></polygon>
+		<polygon data-sec="1" data-build="2" data-floor="11" class="floor-svg-polygon" points="568.5,512,654.5,516.5,893.5,503,892,518.5,653.5,531,574,528.5"></polygon>
+		<polygon data-sec="1" data-build="2" data-floor="12" class="floor-svg-polygon" points="574,495.5,654.5,496.5,890.5,489,889.5,502.5,655,514,569,511"></polygon>
+		<polygon data-sec="1" data-build="2" data-floor="13" class="floor-svg-polygon" points="569,477,657,478,891,471,891,488,655.5,496,573,494.5"></polygon>
+		<polygon data-sec="1" data-build="2" data-floor="14" class="floor-svg-polygon" points="571.5,459,653,460,891.5,456,893,470.5,655.5,478,569,475.5"></polygon>
+		<polygon data-sec="1" data-build="2" data-floor="15" class="floor-svg-polygon" points="571,443,653.5,443.5,890,440.5,891,456.5,653.5,459.5,573,459.5"></polygon>
+		<polygon data-sec="1" data-build="2" data-floor="16" class="floor-svg-polygon" points="572.5,424.5,653,425.5,890.5,425,891,439.5,653.5,442,571.5,442"></polygon>
+		<polygon data-sec="1" data-build="2" data-floor="17" class="floor-svg-polygon" points="571,407.5,652.5,406.5,891.5,409,891,424,653.5,425,572.5,423.5"></polygon>
+		<polygon data-sec="1" data-build="2" data-floor="18" class="floor-svg-polygon" points="572.5,390,652,387.5,892.5,393,892,408,653,405.5,571.5,406.5"></polygon>
+		<polygon data-sec="1" data-build="2" data-floor="19" class="floor-svg-polygon" points="570.5,371.5,652,370,893,377,891,392,652.5,386.5,572.5,388"></polygon>
+		<polygon data-sec="1" data-build="2" data-floor="20" class="floor-svg-polygon" points="570,353.5,651.5,353,891.5,362.5,892.5,377,653,369.5,570,371"></polygon>
+		<polygon data-sec="1" data-build="2" data-floor="21" class="floor-svg-polygon" points="570,339,653.5,335,891,346,892,362.5,651.5,352,570,353"></polygon>
+		<polygon data-sec="1" data-build="2" data-floor="22" class="floor-svg-polygon" points="569.5,319.5,653.5,317,891.5,330.5,892,346,653,333.5,569.5,337"></polygon>
+		<polygon data-sec="1" data-build="2" data-floor="23" class="floor-svg-polygon" points="568.5,301,654.5,297,890,313,890,330,648.5,316.5,569.5,318.5"></polygon>
+		<polygon data-sec="1" data-build="2" data-floor="24" class="floor-svg-polygon" points="570,267,652,262,890,282,890,313,655,297,569,300"></polygon>
+
+		<symbol id="info-svg-polygon-left" viewBox="0 0 60 30" data-build="2" class="info-svg-polygon-left">
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M-0.000435142 28.4214L50.5259 28.4214V21.7107L59.5259 14.2107L50.5259 6.71073L50.5259 0.00033548L-0.000435142 0.00033548L-0.000435142 28.4214Z" class="floor-rect"  />
+<!--			<path fill-rule="evenodd" clip-rule="evenodd" d="M59.5263 0H9V6.71065L0 14.2107L9 21.7107V28.4211H59.5263V0Z" class="floor-rect"  />-->
+			<text x="25" y="13" class="floor-text">15</text>
+		</symbol>
+		<use x="500" y="0" width="60px" height="30px" data-build="2" xlink:href="#info-svg-polygon-left" class="floor-info-svg"></use>
+
+
+	<symbol id="info-svg-polygon-right" viewBox="0 0 60 30" data-build="1" class="info-svg-polygon-right">
+		<path fill-rule="evenodd" clip-rule="evenodd" d="M59.5263 0H9V6.71065L0 14.2107L9 21.7107V28.4211H59.5263V0Z" class="floor-rect"  />
+		<text x="35" y="13" class="floor-text">15</text>
+	</symbol>
+	<use x="1300" y="0" width="60px" height="30px" data-build="1" xlink:href="#info-svg-polygon-right" class="floor-info-svg"></use>
+
+
+	<symbol id="info-svg-polygon-1" viewBox="0 0 210 30" data-build="null" class="info-svg-helper">
+		<rect x="0" y="0" height="30px" width="210px" fill-rule="evenodd" clip-rule="evenodd" class="floor-rect-helper"  />
+<!--		<path fill-rule="evenodd" clip-rule="evenodd" d="M59.5263 0H9V6.71065L0 14.2107L9 21.7107V28.4211H59.5263V0Z" class="floor-rect-helper"  />-->
+		<text x="15" y="13" class="floor-text-helper">Днiпровська гавань</text>
+	</symbol>
+	<use x="1360" y="500" width="250px" height="30px" data-build="null" xlink:href="#info-svg-polygon-1" class="floor-info-helper"></use>
+
+</svg>

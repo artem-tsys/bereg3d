@@ -1,0 +1,24 @@
+{
+  "complex": {
+    "32": {
+      "path": "/wp-content/themes/bereg/assets/s3d/images/svg/complex/32.svg",
+      "dir": "/wp-content/themes/bereg/assets/s3d/images/svg/complex/",
+      "name": "32.svg"
+    },
+    "58": {
+      "path": "/wp-content/themes/bereg/assets/s3d/images/svg/complex/58.svg",
+      "dir": "/wp-content/themes/bereg/assets/s3d/images/svg/complex/",
+      "name": "58.svg"
+    },
+    "92": {
+      "path": "/wp-content/themes/bereg/assets/s3d/images/svg/complex/92.svg",
+      "dir": "/wp-content/themes/bereg/assets/s3d/images/svg/complex/",
+      "name": "92.svg"
+    },
+    "119": {
+      "path": "/wp-content/themes/bereg/assets/s3d/images/svg/complex/119.svg",
+      "dir": "/wp-content/themes/bereg/assets/s3d/images/svg/complex/",
+      "name": "119.svg"
+    }
+  }
+}

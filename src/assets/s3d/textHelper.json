@@ -1,0 +1,188 @@
+{
+  "ua": {
+    "helperFloor": {
+      "noSale": "Скоро у продажі",
+      "house": "Будинок",
+      "floor": "поверх"
+    },
+    "helperAll": "Оберіть </br>будинок",
+    "layout": {
+      "FloorTitle" : "Оберіть квартиру",
+      "FloorName" : "поверх",
+      "HouseName" : "будинок",
+      "selectFloor": "Змінити поверх"
+    },
+    "firstHelper": {
+      "desktop": [
+        {
+          "title": "крок 1",
+          "text": "Оберіть зручний ракурс для перегляду генплану, затиснувши ліву кнопку миші та переміщаючи мишу або натискаючи стрілочки",
+          "img": "/wp-content/themes/bereg/assets/s3d/images/icon/first-info-step-1.svg"
+        },
+        {
+          "title": "крок 2",
+          "text": "Щоб обрати поверх будинку, натисніть на нього",
+          "img": "/wp-content/themes/bereg/assets/s3d/images/icon/first-info-step-2.svg"
+        },
+        {
+          "title": "крок 3",
+          "text": "Щоб подивитися доступні квартири, скористайтеся фільтром, щоб побачити де є квартири за обраними параметрами",
+          "img": "/wp-content/themes/bereg/assets/s3d/images/icon/first-info-step-3.svg"
+        }
+      ],
+      "mobile": [
+        {
+          "title": "крок 1",
+          "text": "Щоб переглянути весь комплекс, проведіть по екрану пристрою.",
+          "img": "/wp-content/themes/bereg/assets/s3d/images/icon/help-mobi.gif"
+        },
+        {
+          "title": "крок 2",
+          "text": "Оберіть зручний ракурс для перегляду генплану, натискаючи стрілочки",
+          "img": "/wp-content/themes/bereg/assets/s3d/images/icon/first-info-step-1.svg"
+        },
+        {
+          "title": "крок 3",
+          "text": "Щоб обрати поверх будинку, натисніть на нього",
+          "img": "/wp-content/themes/bereg/assets/s3d/images/icon/first-info-step-2.svg"
+        },
+        {
+          "title": "крок 4",
+          "text": "Щоб подивитися доступні квартири, скористайтеся фільтром, щоб побачити де є квартири за обраними параметрами",
+          "img": "/wp-content/themes/bereg/assets/s3d/images/icon/first-info-step-3.svg"
+        }
+      ],
+      "general" : {
+        "button-next": "Зрозуміло",
+        "button-end": "Пропустити інструкції",
+        "head-logo": "/wp-content/themes/bereg/assets/s3d/images/icon/first-info-mini-logo.svg",
+        "head-description": "bereg creative house",
+        "logo": "/wp-content/themes/bereg/assets/images/header/logo.svg"
+      }
+    }
+  },
+  "ru": {
+    "helperFloor": {
+      "noSale": "Скоро в продаже",
+      "house": "Дом",
+      "floor": "этаж"
+    },
+    "helperAll": "Выберите </br> дом",
+    "layout": {
+      "FloorTitle" : "Выберите квартиру",
+      "FloorName" : "этаж",
+      "HouseName" : "дом",
+      "selectFloor": "Сменить этаж"
+    },
+    "firstHelper": {
+      "desktop": [
+        {
+          "title": "шаг 1",
+          "text": "Выберите удобный ракурс для просмотра генплана, зажав левую кнопку мыши и перемещая мышь или нажимая стрелочки",
+          "img": "/wp-content/themes/bereg/assets/s3d/images/icon/first-info-step-1.svg"
+        },
+        {
+          "title": "шаг 2",
+          "text": "Чтобы выбрать этаж дома, нажмите на него",
+          "img": "/wp-content/themes/bereg/assets/s3d/images/icon/first-info-step-2.svg"
+        },
+        {
+          "title": "шаг 3",
+          "text": "Чтобы посмотреть доступные квартиры воспользуйтесь фильтром, чтобы увидеть где есть квартиры по выбранным параметрам",
+          "img": "/wp-content/themes/bereg/assets/s3d/images/icon/first-info-step-3.svg"
+        }
+      ],
+      "mobile": [
+        {
+          "title": "шаг 1",
+          "text": "Чтобы просмотреть весь комплекс, проведите по экрану устройства.",
+          "img": "/wp-content/themes/bereg/assets/s3d/images/icon/help-mobi.gif"
+        },
+        {
+          "title": "шаг 2",
+          "text": "Выберите удобный ракурс для просмотра генплана, нажимая стрелочки",
+          "img": "/wp-content/themes/bereg/assets/s3d/images/icon/first-info-step-1.svg"
+        },
+        {
+          "title": "шаг 3",
+          "text": "Чтобы выбрать этаж дома, нажмите на него",
+          "img": "/wp-content/themes/bereg/assets/s3d/images/icon/first-info-step-2.svg"
+        },
+        {
+          "title": "шаг 4",
+          "text": "Чтобы посмотреть доступные квартиры воспользуйтесь фильтром, что-бы увидеть где есть квартиры по выбранным параметрам",
+          "img": "/wp-content/themes/bereg/assets/s3d/images/icon/first-info-step-3.svg"
+        }
+      ],
+      "general" : {
+        "button-next": "Далее",
+        "button-end": "пропустить инструкции",
+        "head-logo": "/wp-content/themes/bereg/assets/s3d/images/icon/first-info-mini-logo.svg",
+        "head-description": "bereg creative house",
+        "logo": "/wp-content/themes/bereg/assets/images/header/logo.svg"
+      }
+    }
+  },
+  "en": {
+    "helperFloor": {
+      "noSale": "Coming soon",
+      "house": "house",
+      "floor": "floor"
+    },
+    "helperAll": "Select </br>a house",
+    "layout": {
+      "FloorTitle" : "Select an apartment",
+      "FloorName" : "floor",
+      "HouseName" : "house",
+      "selectFloor": "Change Floor"
+    },
+    "firstHelper": {
+      "desktop": [
+        {
+          "title": "step 1",
+          "text": "Choose a convenient angle to view the general plan by holding down the left mouse button and moving the mouse or clicking the arrows",
+          "img": "/wp-content/themes/bereg/assets/s3d/images/icon/first-info-step-1.svg"
+        },
+        {
+          "title": "step 2",
+          "text": "To select a floor of a house, click on it",
+          "img": "/wp-content/themes/bereg/assets/s3d/images/icon/first-info-step-2.svg"
+        },
+        {
+          "title": "step 3",
+          "text": "To see the available apartments, use the filter to see where there are apartments by the selected parameters",
+          "img": "/wp-content/themes/bereg/assets/s3d/images/icon/first-info-step-3.svg"
+        }
+      ],
+      "mobile": [
+        {
+          "title": "step 1",
+          "text": "To view the entire complex, swipe through the device screen.",
+          "img": "/wp-content/themes/bereg/assets/s3d/images/icon/help-mobi.gif"
+        },
+        {
+          "title": "step 2",
+          "text": "Choose a convenient angle to view the general plan by clicking the arrows",
+          "img": "/wp-content/themes/bereg/assets/s3d/images/icon/first-info-step-1.svg"
+        },
+        {
+          "title": "step 3",
+          "text": "To select a floor of a house, click on it",
+          "img": "/wp-content/themes/bereg/assets/s3d/images/icon/first-info-step-2.svg"
+        },
+        {
+          "title": "step 4",
+          "text": "To see the available apartments, use the filter to see where there are apartments for the selected parameters",
+          "img": "/wp-content/themes/bereg/assets/s3d/images/icon/first-info-step-3.svg"
+        }
+      ],
+      "general" : {
+        "button-next": "Next",
+        "button-end": "Skip instructions",
+        "head-logo": "/wp-content/themes/bereg/assets/s3d/images/icon/first-info-mini-logo.svg",
+        "head-description": "bereg creative house",
+        "logo": "/wp-content/themes/bereg/assets/images/header/logo.svg"
+      }
+    }
+  }
+}

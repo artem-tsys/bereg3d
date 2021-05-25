@@ -1,0 +1,74 @@
+.page404 {
+  &-wrap {
+    height: calc(100vh - 64px);
+    background-color: lighten($mc, 5%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $wc;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+    font-weight: 700;
+    line-height: normal;
+    font-size: 150px;
+    text-align: center;
+    animation: tada 3s infinite;
+
+    @include to(578px) {
+      font-size: 70px;
+      margin-bottom: 30px;
+    }
+
+    &-small {
+      display: block;
+      font-size: 50px;
+
+      @include to(578px) {
+        font-size: 30px;
+      }
+    }
+  }
+
+  &__subtitle {
+    padding: 0 10px;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .link-wrap {
+    display: flex;
+    justify-content: space-between;
+
+    @include to(578px) {
+      flex-direction: column;
+    }
+
+    a {
+      margin: 0 15px;
+      padding: 10px 0;
+      display: flex;
+      min-width: 220px;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      border: 1px solid $wc;
+      color: $wc;
+      span {
+        z-index: 1;
+      }
+
+      &::before {
+        z-index: 0;
+      }
+
+      @include to(578px) {
+        margin: 20px auto;
+        width: 70%;
+        min-width: 200px;
+      }
+    }
+  }
+}

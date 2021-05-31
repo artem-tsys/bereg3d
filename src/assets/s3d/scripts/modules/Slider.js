@@ -470,14 +470,14 @@ class Slider {
 
   createArrow() {
       let arrowLeft = createMarkup('button', this._wrapper, {class: 's3d__button s3d__button-left js-s3d__button-left unselectable'});
-      $(arrowLeft).append('<svg width="50" height="9" viewBox="0 0 50 9" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+      $(arrowLeft).append('<svg viewBox="0 0 50 9" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
         '<path d="M7 -3.75918e-06L3.93402e-07 4.5L7 9L7 -3.75918e-06Z" fill="#FCFCFC"/>\n' +
         '<path d="M50 4L50 5L7 4.99999L7 4L50 4Z" fill="#FCFCFC"/>\n' +
         '</svg>');
       $('.js-s3d__button-left').on('click', this.left);
 
       let arrowRight = createMarkup('button', this._wrapper, {class: 's3d__button s3d__button-right js-s3d__button-right unselectable'});
-      $(arrowRight).append('<svg width="50" height="9" viewBox="0 0 50 9" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+      $(arrowRight).append('<svg viewBox="0 0 50 9" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
         '<path d="M43 9L50 4.5L43 0V9Z" fill="#FCFCFC"/>\n' +
         '<path d="M5.96046e-08 5L0 4L43 4V5L5.96046e-08 5Z" fill="#FCFCFC"/>\n' +
         '</svg>');

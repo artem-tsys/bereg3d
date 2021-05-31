@@ -69,7 +69,7 @@
             </button>
             <div class="s3d-controller__elem js-s3d-controller__elem">
               <button class="s3d-select js-s3d-select active" type="button" data-type="complex">
-                <svg role="presentation">
+                <svg class="icon-cube" role="presentation">
                   <use xlink:href="#icon-cube"></use>
                 </svg><span>genplan</span>
               </button>
@@ -192,7 +192,10 @@
             <div class="s3d-floor__helper-place">Заг. пл:
               <div class="js-s3d-floor__helper-place"></div>м2
             </div>
-            <button class="button s3d-floor__helper-button js-s3d-floor__helper-button" type="button"></button>
+            <!--button(type='button').button.s3d-floor__helper-button.js-s3d-floor__helper-button--><a class="link js-s3d-floor__helper-button" href="#"><span>Детальніше</span>
+              <svg class="link__arrow" role="presentation">
+                <use xlink:href="#icon-arrow"></use>
+              </svg></a>
             <div class="s3d-floor__helper-bg"></div>
           </div>
         </div>

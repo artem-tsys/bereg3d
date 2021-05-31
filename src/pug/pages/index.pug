@@ -27,7 +27,7 @@ block content
                         span.s3d-filter__open-num.js-s3d-filter__open-num
                     .s3d-controller__elem.js-s3d-controller__elem
                         button.s3d-select.js-s3d-select.active(type='button' data-type='complex')
-                             +svg('cube')
+                             +svg('cube').icon-cube
                              span genplan
                         button.s3d-select.js-s3d-select(type='button' data-type='floor' disabled)
                             +svg('floor-plan')
@@ -135,7 +135,10 @@ block content
                         | Заг. пл:
                         .js-s3d-floor__helper-place
                         | м2
-                    button(type='button').button.s3d-floor__helper-button.js-s3d-floor__helper-button
+                    //button(type='button').button.s3d-floor__helper-button.js-s3d-floor__helper-button
+                    a(href="#").link.js-s3d-floor__helper-button
+                        span Детальніше
+                        +svg('arrow').link__arrow
                     .s3d-floor__helper-bg
 block footer
     footer.page__footer-wrapper.s3d__footer

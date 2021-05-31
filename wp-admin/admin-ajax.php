@@ -226,9 +226,7 @@ function FlatX($id){
             ]
         ]);
 
-
 //    $_POST['house'], $_POST['floor']
-
     $floor = createSvg2($data['data']['data'][0]['build'],$data['data']['data'][0]['floor'],$id);
     $flatPage = "";
     $flatPage .= "";
@@ -309,8 +307,8 @@ function floorX()
     }
     $cssSizeHeight = ($cssSize != 1250)? $size[1] : $size[1]/$keff;
 
-    $svg = '<svg class="s3d-floor__style-svg" id="floor--svg" '.' viewBox="0 0 '.$cssSize.' '.$cssSizeHeight*1.1.'" version="1.0" xmlns="http://www.w3.org/2000/svg" >
-                                <image xlink:href="'.$img_svg.'" x="0" y="0" height="100%" width="100%" style="transform: translateY(-4%);"></image>';
+    $svg = '<svg class="s3d-floor__style-svg" id="floor--svg" '.' viewBox="0 0 '.$cssSize.' '.$cssSizeHeight*1.1.'" version="1.0" xmlns="http://www.w3.org/2000/svg">
+              <image xlink:href="'.$img_svg.'" x="0" y="0" height="100%" width="100%" style="transform: translateY(-4%);"></image>';
 
 
 

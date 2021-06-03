@@ -84,13 +84,14 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: rgba(255,255,255,0.97);
+  background-color: rgba(26,41,65,0.85);
   z-index: 10000;
-  fill: $--bg;
+  color: #FCFCFC;
+  fill: $dark;
   cursor: not-allowed;
   & > svg {
-    width: 48px;
-    height: 48px;
+    width: 128px;
+    height: 128px;
     circle {
       transform-origin: center;
       stroke: $--bg;
@@ -303,6 +304,7 @@
     flex-direction: column;
     align-items: center;
     width: min-content;
+    min-width: 160px;
     padding: 20px 45px 30px;
     font-weight: 600;
     color: #140101;
@@ -343,6 +345,11 @@
       justify-content: center;
       align-items: center;
       margin-bottom: 20px;
+      height: 150px;
+      img {
+        height: 100%;
+        object-fit: contain;
+      }
     }
     &-area, &-flat, &-type, &-place {
       margin-top: 10px;
@@ -353,6 +360,7 @@
       font-size: 18px;
       color: $dark;
       line-height: 130%;
+      white-space: nowrap;
       span{
         margin-left: 5px;
       }
@@ -505,10 +513,11 @@
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
-        img{
+        svg{
           height: 40px;
           width: 20px;
           cursor: pointer;
+          fill: $dark;
         }
       }
       &__up{
@@ -608,11 +617,7 @@
       right: 8%;
     }
   }
-  &-filter{
-    //transform: translate(0, 0) !important;
-    //opacity: 1!important;
-    //visibility: visible!important;
-
+  &-filter {
     position: absolute;
     top: 0;
     left: 0;
@@ -1252,6 +1257,9 @@
       padding: 130px 20px 50px;
       justify-content: center;
       overflow: hidden;
+      .flat {
+        grid-template-rows: 1fr;
+      }
     }
     &__floor{
       flex-direction: row-reverse;
@@ -1266,11 +1274,12 @@
     z-index: 15;
   }
   &__apart {
-    display: grid;
-    grid-template-areas: 'desc image image'
-    'plan buttons buttons';
-    grid-template-columns: 430px 1fr 1fr;
-    grid-template-rows: auto 170px;
+    display: flex;
+    //display: grid;
+    //grid-template-areas: 'desc image image'
+    //'plan buttons buttons';
+    //grid-template-columns: 430px 1fr 1fr;
+    //grid-template-rows: auto 170px;
     height: 100%;
     width: 100%;
     position: relative;
@@ -1390,7 +1399,7 @@
     .s3d-floor__style-svg{
       display: block;
       margin: 0 auto;
-      width: calc(100% - 90px);
+      max-width: calc(100% - 90px);
       height: 100%;
       max-height: 80vh;
       use{
@@ -1619,7 +1628,7 @@
   z-index: 600;
   bottom: auto;
   right: auto;
-  background: #FFD2D8;
+  background: rgb(26,41,65);
   opacity: 0;
   &.translate-layer__up{
     top: 100%;
@@ -1638,19 +1647,19 @@
     top: -270vh;
   }
   &--2{
-    background: #FF1E3C;
+    background: rgb(34, 54, 86);
     height: 70vh;
   }
   &--3{
-    background: #FF4B63;
+    background: rgb(48, 75, 119);
     height: 50vh;
   }
   &--4{
-    background: #FF788A;
+    background: rgb(55, 86, 137);
     height: 30vh;
   }
   &--5{
-    background: #FFA5B1;
+    background: rgb(70, 110, 174);
     height: 20vh;
   }
 }
@@ -1927,7 +1936,16 @@
       opacity: 1;
   }
 }
-
+.link {
+  background: none;
+  border: none;
+  span {
+    pointer-events: none;
+  }
+  svg {
+    pointer-events: none;
+  }
+}
 html,body, .page__inner{
   width: 100%;
 }

@@ -4,7 +4,7 @@ function loader(callback) {
 	const timesToTest = 5
 	const tThreshold = 100 // ms
 	const numImage = 32
-	const testImage = `/wp-content/themes/boston/assets/s3d/images/boston/complex/${numImage}.jpg` // small image in your server
+	const testImage = `/wp-content/themes/bereg/assets/s3d/images/bereg/${numImage}.jpg` // small image in your server
 	const dummyImage = new Image()
 	let isConnectedFast = false
 

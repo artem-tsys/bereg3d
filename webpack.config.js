@@ -3,7 +3,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const config = {
     entry: {
-        index: "./src/assets/s3d/scripts/index-app.js"
+        s3d: "./src/assets/s3d/scripts/index-app.js"
     },
     output: {
         filename: "[name].bundle.js"
@@ -26,7 +26,7 @@ const config = {
             cacheGroups: {
                 commons: {
                     test: /[\\/]node_modules[\\/]/,
-                    name: 'vendors',
+                    name: 's3d-vendors',
                     chunks: 'all'
                 }
             }

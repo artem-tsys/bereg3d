@@ -42,14 +42,14 @@ function init() {
     const config = {
         complex: {
             url: '',
-            imageUrl: `/wp-content/themes/${nameProject}/assets/s3d/images/${nameProject}/complex/`,
+            imageUrl: `/wp-content/themes/${nameProject}/assets/s3d/images/${nameProject}/`,
             id: 'js-s3d__wrapper',
             numberSlide: {
                 min: 0,
-                max: 119
+                max: 178
             },
-            controllPoint : [32,58,92,119],
-            activeSlide: 32,
+            controllPoint : [25,55,110,165],
+            activeSlide: 25,
             mouseSpeed: 1,
             // mouseSpeed: 300,
         },

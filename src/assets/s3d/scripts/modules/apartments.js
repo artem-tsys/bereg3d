@@ -10,61 +10,79 @@ class Apartments{
         this.click = data.click;
         this.scrollToBlock = data.scrollToBlock;
     }
+    initPlan(conf) {
+      fetch(conf['3d'])
+        .then(res => (res.ok ? res : Promise.reject(res)))
+        .then(() => {
+          $('.plan').addClass('plan-active');
+        }).catch(() => {
+        $('.plan').removeClass('plan-active');
+      });
+    }
 
     init(config){
-        $('.s3d-filter__plan').removeClass('s3d-filter__plan-active');
+      const setSrcImage = (path) => {
+        this.image.setAttribute('src', path);
+        this.image.setAttribute('data-mfp-src', path);
+      };
+      const updatePlanActiveText = (type) => {
+        const prevActive = document.querySelector('.active[data-plane]');
+        prevActive.classList.remove('active');
+        const nextActive = document.querySelector(`[data-plane][data-type="${type}"]`);
+        nextActive.classList.add('active');
+      };
+
+      $(document).on('change', '.js-switch-btn', (event) => {
+        const type = (event.target.checked) ? '3d' : '2d';
+        setSrcImage(this.pathImages[type]);
+        updatePlanActiveText(type);
+      });
+
+      $('.s3d-filter__plan').removeClass('s3d-filter__plan-active');
       this.getPlane(config);
 
-      const self = this;
-      $('.js-switch-btn').on('change', function() {
-                let has = $(this).is(':checked');
-                if(has && self.conf.plan3d) {
-                    self.conf.$img.src = self.conf.plan3dSrc;
-                    self.conf.$mfpLink.href = self.conf.plan3dSrc;
-                } else {
-                    self.conf.$img.src = self.conf.planStandartSrc;
-                    self.conf.$mfpLink.href = self.conf.planStandartSrc;
-                }
-            });
+      // const self = this;
+      // $('.js-switch-btn').on('change', function() {
+
+          // let has = $(this).is(':checked');
+          // if(has && self.conf.plan3d) {
+          //     self.conf.$img.src = self.conf.plan3dSrc;
+          //     self.conf.$mfpLink.href = self.conf.plan3dSrc;
+          // } else {
+          //     self.conf.$img.src = self.conf.planStandartSrc;
+          //     self.conf.$mfpLink.href = self.conf.planStandartSrc;
+          // }
+      // });
     }
     update(config){
         $('.s3d-filter__plan').removeClass('s3d-filter__plan-active');
       this.getPlane(config);
     };
 
-    updateImage(){
-        const type = $('.js-flat-plan-mfp').data('type');
-        return{
-            $img : document.querySelector('.flat-plan'),
-            $mfpLink : document.querySelector('.js-flat-plan-mfp'),
-            planStandartSrc : $('.js-flat-plan-mfp').attr('href'),
-            planStandartName : type ,
-            plan3dSrc : `${window.location.origin}/wp-content/themes/boston/assets/img/projects/1/3d/${ type.split('_')[0]}.jpg`,
-            plan3d : false
-        }
-    }
+    // updateImage(){
+    //     const type = $('.js-flat-plan-mfp').data('type');
+    //     return{
+    //         $img : document.querySelector('.flat-plan'),
+    //         $mfpLink : document.querySelector('.js-flat-plan-mfp'),
+    //         planStandartSrc : $('.js-flat-plan-mfp').attr('href'),
+    //         planStandartName : type ,
+    //         plan3dSrc : `${window.location.origin}/wp-content/themes/bereg/assets/img/projects/1/3d/${ type.split('_')[0]}.jpg`,
+    //         plan3d : false
+    //     }
+    // }
 
-    checkImage() {
-        let conf = this.conf;
-        fetch(conf.plan3dSrc)
-            .then(res => res.ok ? res : Promise.reject(res))
-            .then(res => {
-                $('.s3d-filter__plan').addClass('s3d-filter__plan-active');
-                conf.plan3d = true;
-            }).catch(()=> {
-                $('.s3d-filter__plan').removeClass('s3d-filter__plan-active');
-            })
-    }
+    // checkImage() {
+    //     let conf = this.conf;
+    //     fetch(conf.plan3dSrc)
+    //         .then(res => res.ok ? res : Promise.reject(res))
+    //         .then(res => {
+    //             $('.s3d-filter__plan').addClass('s3d-filter__plan-active');
+    //             conf.plan3d = true;
+    //         }).catch(()=> {
+    //             $('.s3d-filter__plan').removeClass('s3d-filter__plan-active');
+    //         })
+    // }
     /**Буква "Є" не воспринимается в адресной строке */
-    changeYe() {
-        $('.s3d-floor__helper-img img').src = $('.s3d-floor__helper-img img').src.replace(/%D0%84/, 'Ye');
-        $('.s3d-floor__helper-img img').src = $('.s3d-floor__helper-img img').src.replace(/Є/, 'Ye');
-        $('.flat-plan').src =$('.flat-plan').src.replace(/%D0%84/, 'Ye');
-        $('.js-flat-plan-mfp').href = $('.js-flat-plan-mfp').href.replace(/Є/, 'Ye');
-        $('.js-flat-plan-mfp').href = $('.js-flat-plan-mfp').href.replace(/%D0%84/, 'Ye');
-    }
-
-
 
     getPlane(config){
         let attr = 'action=getFlatById&id='+config.flat;
@@ -93,8 +111,12 @@ class Apartments{
         this.click(e, 'floor');
         $('.js-s3d-popup__mini-plan').removeClass('active');
       });
-      this.conf = this.updateImage();
-      this.checkImage();
+      // this.conf = this.updateImage();
+      // this.checkImage();
+
+      this.image = document.querySelector('[data-flat-image]');
+      this.pathImages = JSON.parse(this.image.dataset.src);
+      this.initPlan(this.pathImages);
     }
 
     openPopup() {

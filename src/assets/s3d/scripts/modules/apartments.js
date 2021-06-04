@@ -12,23 +12,23 @@ class Apartments{
     }
 
     init(config){
-        $('.s3d-filter__plan').removeClass('s3d-filter__plan-active');
+      $('.s3d-filter__plan').removeClass('s3d-filter__plan-active');
       this.getPlane(config);
 
       const self = this;
       $('.js-switch-btn').on('change', function() {
-                let has = $(this).is(':checked');
-                if(has && self.conf.plan3d) {
-                    self.conf.$img.src = self.conf.plan3dSrc;
-                    self.conf.$mfpLink.href = self.conf.plan3dSrc;
-                } else {
-                    self.conf.$img.src = self.conf.planStandartSrc;
-                    self.conf.$mfpLink.href = self.conf.planStandartSrc;
-                }
-            });
+          let has = $(this).is(':checked');
+          if(has && self.conf.plan3d) {
+              self.conf.$img.src = self.conf.plan3dSrc;
+              self.conf.$mfpLink.href = self.conf.plan3dSrc;
+          } else {
+              self.conf.$img.src = self.conf.planStandartSrc;
+              self.conf.$mfpLink.href = self.conf.planStandartSrc;
+          }
+      });
     }
     update(config){
-        $('.s3d-filter__plan').removeClass('s3d-filter__plan-active');
+      $('.s3d-filter__plan').removeClass('s3d-filter__plan-active');
       this.getPlane(config);
     };
 
@@ -80,12 +80,12 @@ class Apartments{
     setPlaneInPage(response){
       $('#js-s3d__'+ this.idCopmlex).html(JSON.parse(response));
       this.loader.hide(this.type);
-      $('.flat-group2 ').on('click','polygon',this.openPopup);
-      $('#js-s3d__wrapper__apart .form-js').on('click',()=> $('.common-form-popup-js').addClass('active'));
-      $('.js-flat-button-return').on('click', e => {
-          e.preventDefault();
-          $('.js-s3d-select__floor').click();
-      });
+      $('.flat__floor').on('click', 'polygon', this.openPopup);
+      // $('#js-s3d__wrapper__apart .form-js').on('click',()=> $('.common-form-popup-js').addClass('active'));
+      // $('.js-flat-button-return').on('click', e => {
+      //     e.preventDefault();
+      //     $('.js-s3d-select__floor').click();
+      // });
       $('.js-s3d-popup__mini-plan svg').on('click', 'polygon', (e)=>{
         this.activeSvg = $(e.target).closest("svg");
         $(this.activeSvg).css({'fill':''});
@@ -93,6 +93,10 @@ class Apartments{
         this.click(e, 'floor');
         $('.js-s3d-popup__mini-plan').removeClass('active');
       });
+  
+      $('.flat__img').magnificPopup({
+        type: 'image',
+      });;
       this.conf = this.updateImage();
       this.checkImage();
     }

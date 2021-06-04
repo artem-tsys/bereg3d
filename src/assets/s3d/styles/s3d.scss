@@ -84,13 +84,14 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: rgba(255,255,255,0.97);
+  background-color: rgba(26,41,65,0.85);
   z-index: 10000;
-  fill: $--bg;
+  color: #FCFCFC;
+  fill: $dark;
   cursor: not-allowed;
   & > svg {
-    width: 48px;
-    height: 48px;
+    width: 128px;
+    height: 128px;
     circle {
       transform-origin: center;
       stroke: $--bg;
@@ -141,8 +142,8 @@
     display: grid;
     grid-template-columns: auto 1fr auto;
     grid-template-rows: auto 1fr;
-    width: calc(100% - 40px);
-    padding: 40px 20px 60px;
+    width: 100%;
+    padding: 40px 80px 60px;
     z-index: 102;
     background: transparent;
     pointer-events: none;
@@ -156,7 +157,7 @@
       font-size: 10px;
       pointer-events: painted;
       line-height: 1.6em;
-      margin: 0 auto 0 20px;
+      margin: 0 auto 0 0;
       grid-column: 2;
       grid-row: 1;
       svg{
@@ -203,10 +204,9 @@
       }
     }
     &[data-type='floor']{
-      padding: 20px 0 0 0;
       .s3d-filter__compass svg{
-        stroke: #3b4456;
-        color: #3b4456;
+        stroke: #C4C7CC;
+        color: #C4C7CC;
       }
     }
     &[data-type='apart']{
@@ -229,13 +229,13 @@
     align-items: center;
     justify-content: center;
     height: 50px;
-    padding: 5px 35px;
+    padding: 10px 25px;
     margin: 0;
     background: none;
-    color: #000000;
+    color: $dark;
     fill: $gold;
     stroke: $gold;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1em;
     font-family: $default-font;
     text-transform: uppercase;
@@ -283,7 +283,7 @@
       }
     }
     &:hover:not(.active):not([disabled]){
-      border: 1px solid $gold;
+      //border: 1px solid $gold;
     }
     &:disabled{
       background:  #C4C7CC;
@@ -294,8 +294,6 @@
         stroke: #F3F1F9;
       }
     }
-
-
   }
   &-floor__helper{
     position: absolute;
@@ -305,8 +303,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 160px;
-    padding: 20px 15px;
+    width: min-content;
+    min-width: 160px;
+    padding: 20px 45px 30px;
     font-weight: 600;
     color: #140101;
     background: #ffffff;
@@ -320,8 +319,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 32px;
-      width: 32px;
+      height: 50px;
+      width: 50px;
       transform: translate(0, calc(-50% - 20px));
       &:after{
         content: '';
@@ -338,7 +337,7 @@
       }
       margin-bottom: 10px;
       img{
-        height: 20px;
+        height: 30px;
       }
     }
     &-img{
@@ -346,15 +345,22 @@
       justify-content: center;
       align-items: center;
       margin-bottom: 20px;
+      height: 150px;
+      img {
+        height: 100%;
+        object-fit: contain;
+      }
     }
-    &-area, &-flat, &-type, &-place{
+    &-area, &-flat, &-type, &-place {
+      margin-top: 10px;
       display: flex;
       justify-content: flex-start;
       width: 100%;
       font-weight: 500;
-      font-size: 12px;
+      font-size: 18px;
       color: $dark;
       line-height: 130%;
+      white-space: nowrap;
       span{
         margin-left: 5px;
       }
@@ -387,7 +393,8 @@
   &-nav{
     display: flex;
     align-items: center;
-    &-floor{
+    &-floor {
+      position: relative;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -408,8 +415,7 @@
           color: $dark;
         }
       }
-      &__content{
-        position: relative;
+      &__content {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -464,14 +470,14 @@
       &__list{
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;
         position: absolute;
         top: 50%;
         right: -8px;
         transform: translate(100%, -50%);
-        width: 40px;
+        height: 70vh;
         transition: opacity 0.3s linear;
         opacity: 0;
-        background: #F3F1F9;
         padding: 10px 0;
         pointer-events: none;
         cursor: pointer;
@@ -481,15 +487,16 @@
           align-content: center;
           justify-content: center;
           height: 40px;
+          width: 40px;
+          margin-right: 5px;
           color: $dark;
+          background: #F2F2F2;
           text-align: center;
           font-size: 14px;
           font-weight: 500;
           line-height: 1.3em;
           &:hover{
-            //color: rgba(255,30,60,0.6);
             background: $gold;
-            //color: #FF1E3C;
           }
           &.active{
             color: #FCFCFC;
@@ -506,10 +513,11 @@
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
-        img{
+        svg{
           height: 40px;
           width: 20px;
           cursor: pointer;
+          fill: $dark;
         }
       }
       &__up{
@@ -609,11 +617,7 @@
       right: 8%;
     }
   }
-  &-filter{
-    //transform: translate(0, 0) !important;
-    //opacity: 1!important;
-    //visibility: visible!important;
-
+  &-filter {
     position: absolute;
     top: 0;
     left: 0;
@@ -820,15 +824,15 @@
       align-items: center;
       height: 50px;
       width: initial;
-      padding: 5px 30px;
-      margin: 0 0 0 15px;
+      margin-right: 40px;
+      padding: 5px 38px;
       font-family: $default-font;
       background: none;
       border: 1px solid $dark;
       color: $dark;
       font-weight: 600;
-      font-size: 18px;
-      line-height: 16px;
+      font-size: 14px;
+      line-height: 1em;
       text-transform: uppercase;
       pointer-events: painted;
       transition: all 0.3s linear;
@@ -843,12 +847,12 @@
         top: 0;
         right: 0;
         background: $gold;
-        color: $wc;
-        padding: 2px 3px;
+        color: $light;
+        padding: 5px;
         font-weight: 600;
         font-size: 14px;
+        line-height: 1em;
         font-family: $default-font;
-        line-height: 1.2em;
       }
       &:hover{
         background: $gold;
@@ -918,9 +922,9 @@
       grid-column: 3;
       grid-row: 1;
       display: flex;
-      height: 75px;
-      width: 75px;
-      margin: 0 30px 0 auto;
+      height: 60px;
+      width: 60px;
+      margin: 0 0 0 auto;
       fill: $wc;
       color: $wc;
       svg {
@@ -1136,14 +1140,14 @@
   &__button{
     position: fixed;
     top: 50%;
-    height: 73px;
-    width: 73px;
+    height: 90px;
+    width: 90px;
     display: flex;
     justify-content: center;
     align-items: center;
     transform: translateY(-50%);
     transition: all 0.3s ease-in;
-    padding: 10px;
+    padding: 14px;
     fill: #ffffff;
     background: $dark;
     z-index: 2000;
@@ -1162,10 +1166,10 @@
       }
     }
     &-left{
-      left: 50px;
+      left: 80px;
     }
     &-right{
-      right: 50px;
+      right: 80px;
     }
   }
   &__footer{
@@ -1253,6 +1257,9 @@
       padding: 130px 20px 50px;
       justify-content: center;
       overflow: hidden;
+      .flat {
+        grid-template-rows: 1fr;
+      }
     }
     &__floor{
       flex-direction: row-reverse;
@@ -1267,11 +1274,12 @@
     z-index: 15;
   }
   &__apart {
-    display: grid;
-    grid-template-areas: 'desc image image'
-    'plan buttons buttons';
-    grid-template-columns: 430px 1fr 1fr;
-    grid-template-rows: auto 170px;
+    display: flex;
+    //display: grid;
+    //grid-template-areas: 'desc image image'
+    //'plan buttons buttons';
+    //grid-template-columns: 430px 1fr 1fr;
+    //grid-template-rows: auto 170px;
     height: 100%;
     width: 100%;
     position: relative;
@@ -1391,7 +1399,7 @@
     .s3d-floor__style-svg{
       display: block;
       margin: 0 auto;
-      width: calc(100% - 90px);
+      max-width: calc(100% - 90px);
       height: 100%;
       max-height: 80vh;
       use{
@@ -1485,7 +1493,7 @@
       //display: none;
       width: 100%;
       opacity: 0;
-      fill: $--bg;
+      fill: $gold;
       margin: 0 auto;
     }
     &.js-s3d__svg__active {
@@ -1620,7 +1628,7 @@
   z-index: 600;
   bottom: auto;
   right: auto;
-  background: #FFD2D8;
+  background: rgb(26,41,65);
   opacity: 0;
   &.translate-layer__up{
     top: 100%;
@@ -1639,19 +1647,19 @@
     top: -270vh;
   }
   &--2{
-    background: #FF1E3C;
+    background: rgb(34, 54, 86);
     height: 70vh;
   }
   &--3{
-    background: #FF4B63;
+    background: rgb(48, 75, 119);
     height: 50vh;
   }
   &--4{
-    background: #FF788A;
+    background: rgb(55, 86, 137);
     height: 30vh;
   }
   &--5{
-    background: #FFA5B1;
+    background: rgb(70, 110, 174);
     height: 20vh;
   }
 }
@@ -1928,15 +1936,26 @@
       opacity: 1;
   }
 }
-
+.link {
+  background: none;
+  border: none;
+  span {
+    pointer-events: none;
+  }
+  svg {
+    pointer-events: none;
+  }
+}
 html,body, .page__inner{
   width: 100%;
 }
 body{
   display: block;
 }
-.page__inner{
-   margin-top: var(--header-h);
+.page__inner {
+  margin-top: var(--header-h);
+  height: calc(100vh - var(--header-h));
+  min-height: initial;
 }
 .unselectable {
   -webkit-touch-callout: none; /* iOS Safari */
@@ -1950,7 +1969,7 @@ body{
 img.mfp-img{
   padding: 80px;
 }
-@media screen and (max-width:1640px){
+@media screen and (max-width:1440px){
   #js-s3d{
     &__apart{
       .flat-buttons-group{
@@ -1961,7 +1980,8 @@ img.mfp-img{
     }
   }
   .s3d{
-    &-controller{
+    &-controller {
+      padding: 40px 60px 60px;
       &__elem{
         svg{
           width: 24px;
@@ -1975,11 +1995,12 @@ img.mfp-img{
         line-height: 15px;
         height: 40px;
       }
-      &__open{
+      &__open {
+        padding: 0 34px;
+        margin-right: 15px;
         height: 40px;
-        font-size: 10px;
-        line-height: 16px;
-        &-num{
+        font-size: 12px;
+        &-num {
           font-size: 10px;
         }
       }
@@ -2011,8 +2032,7 @@ img.mfp-img{
     }
     &-select{
       height: 40px;
-      font-size: 10px;
-      line-height: 16px;
+      font-size: 12px;
     }
     &-flat{
       &__button{
@@ -2026,21 +2046,36 @@ img.mfp-img{
     }
     &-floor{
       &__helper{
-        padding: 0 15px 20px;
-        &-logo{
-          transform: translate(0, -50%);
+        padding: 20px 18px 15px;
+        &-logo {
+          height: 32px;
+          width: 32px;
+          img{
+            height: 20px;
+          }
+        //  transform: translate(0, -50%);
         }
         &-area, &-flat, &-type, &-place{
-          font-size: 10px;
-          line-height: 16px;
-          font-weight: 600;
+          margin-top: 5px;
+          font-size: 12px;
         }
+      }
+    }
+    &__button {
+      height: 73px;
+      width: 73px;
+      padding: 10px;
+      &-left{
+        left: 50px;
+      }
+      &-right{
+        right: 50px;
       }
     }
   }
   .js-s3d__infoBox{
-    font-size: 10px;
-    padding: 10px 20px;
+    font-size: 12px;
+    padding: 15px 20px;
   }
 }
 @media screen and (max-width:1023px){
@@ -2093,11 +2128,43 @@ img.mfp-img{
   .s3d{
     &-nav{
       &-floor{
-      margin-top: 50px;
-      &__list{
-        display: none;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-top: 80px;
+        margin-right: auto;
+        margin-bottom: 30px;
+        width: 100%;
+        font-size: 20px;
+        &__top {
+          flex-direction: row-reverse;
+          align-items: center;
+          svg {
+            transform: translate(-50%, 50%)rotate(180deg);
+          }
+          &--text {
+            white-space: nowrap;
+            font-size: 24px;
+            line-height: 1.2em;
+          }
+        }
+        &__content {
+          width: initial;
+          height: 170px;
+          padding: 20px 40px;
+        }
+        &__list{
+          //display: none;
+          padding: 0;
+          //height: initial;
+          //position: static;
+          align-self: flex-start;
+          flex-wrap: nowrap;
+          opacity: 1;
+          top: 0;
+          transform: translate(-100%, 0);
+          pointer-events: painted;
+        }
       }
-    }
       &__block{
         &-floor{
           .s3d-controller__elem{
@@ -2160,6 +2227,13 @@ img.mfp-img{
     }
     &-floor__helper{
       transform: translate(-50%, -100%);
+      &-area, &-flat, &-type, &-place{
+        margin-top: 10px;
+        font-size: 18px;
+      }
+      .link {
+        margin-top: 15px;
+      }
     }
     &-flat{
       &__param{
@@ -2167,7 +2241,8 @@ img.mfp-img{
       }
 
     }
-    &-controller{
+    &-controller {
+      padding: 25px 20px 0;
       &__help{
         margin: auto 15px 15px auto;
         img{
@@ -2184,6 +2259,14 @@ img.mfp-img{
         }
       }
     }
+    &__button {
+      &-left {
+        left: 40px;
+      }
+      &-right {
+        right: 40px;
+      }
+    }
   }
   //.floor-wrapper{
   //  height: 1px;
@@ -2195,9 +2278,8 @@ img.mfp-img{
 @media screen and (max-width:767px){
   .s3d{
     &-select{
-      font-size: 18px;
-      height: 30px;
-      padding: 5px;
+      font-size: 12px;
+      padding: 0;
       width: 33.33%;
       span{
         font-size: 12px;
@@ -2217,13 +2299,12 @@ img.mfp-img{
       width: 100%;
       pointer-events: none;
       grid-template-columns: 33.33% 33.33% 33.33%;
-      grid-template-rows: auto 1fr 30px;
+      grid-template-rows: auto 1fr 40px;
       grid-gap: 15px 0;
       padding: 15px 0 0;
       &__elem{
         grid-row: 3;
         grid-column: 1 / span 3;
-        height: 30px;
         margin: 0;
         svg{
           width: 21px;
@@ -2272,6 +2353,9 @@ img.mfp-img{
       &__open{
         height: 30px;
         border-width: 1px;
+        margin: 0 0 0 20px;
+        grid-column: span 2;
+        width: max-content;
         //padding: 8px 10px;
       }
       &__show{
@@ -2307,85 +2391,35 @@ img.mfp-img{
       //display: none;
     }
     &__button{
-      height: 26px;
-      width: 26px;
-      padding: 0;
-      border-width: 1px;
-      svg{
-        height: 10px;
-        width: 10px;
-        flex: 0 0 10px;
+      height: 47px;
+      width: 47px;
+      padding: 7px;
+      &-left{
+        left: 20px;
+      }
+      &-right{
+        right: 20px;
       }
     }
     &-nav{
-      &-floor{
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        &__house{
-          display: inline-block;
-          margin: 0 7px;
-
-        }
-        &__left{
-          display: flex;
-          flex-direction: row-reverse;
-          white-space: nowrap;
-          border: none;
-          text-transform: uppercase;
-          font-weight: bold;
-          margin: 0;
-          &-num{
-            font-size: 14px;
-            line-height: 17px;
-            font-weight: bold;
-            margin: 0 5px;
-          }
-          &-name{
-            font-size: 14px;
-            line-height: 17px;
-            font-weight: bold;
-          }
-        }
-        &__arrow{
-          display: none;
-        }
-        &__button{
-          display: flex;
-        }
+      &-floor {
+        margin-top: 0;
+        padding: 0 0 0 20px;
+        width: calc(100% - 60px);
         &__top{
           display: none;
         }
-        &__content{
-          height: initial;
-          padding: 10px 0 ;
-          background: transparent;
-          box-shadow: none;
+        &__content {
+          padding: 15px 22px;
+          height: 140px;
         }
-        &__list{
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          align-items: flex-start;
-          width: 100%;
-          pointer-events: none;
-          top:100%;
-          background: $wc;
-          padding: 0 5px;
-          transform: translate(0,0);
-          span{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 20px;
-            width: 20px;
-            border-radius: 3px;
-            margin: 4px;
+        &__list {
+          transform: translate(100%, 70px);
 
-            &.active{
-              background: #FF1E3C;
-              color: #ffffff;
-            }
+          span {
+            height: 30px;
+            width: 30px;
+            margin: 0;
           }
         }
       }
@@ -2452,17 +2486,16 @@ img.mfp-img{
     &-floor__helper{
       transition: opacity 0.3s ease-in 0.2s;
       &-img img{
-      max-height: 40vh;
+        max-height: 40vh;
+      }
     }
-
-    }
-
   }
   .js-s3d__wrapper{
-    &__floor{
+    &__floor {
+      overflow-y: auto;
       //top: 50%;
       //height: 50%;
-      padding: 70px 0 25px;
+      padding: 15px 0 25px;
     }
     &__apart{
       background: $wc;
@@ -2472,8 +2505,8 @@ img.mfp-img{
     &__floor{
       .s3d-floor__style-svg{
         width: calc(100% - 60px);
+        max-height: 65vh;
       }
-    //  flex: 0 0 auto;
     }
     &__apart{
        align-content: flex-start;
@@ -2590,15 +2623,6 @@ img.mfp-img{
   }
 }
 @media screen and (max-width:768px){
-  .js-s3d__slideModule{
-    height: calc(100vh - 59px);
-    height: calc(var(--vh, 1vh) * 100 - 59px);
-  }
-  .page__inner{
-    height: calc(100vh - 59px);
-    height: calc(var(--vh, 1vh) * 100 - 59px);
-    margin-top: 59px;
-  }
   #js-s3d__apart .flat-group2{
     margin: 0;
   }

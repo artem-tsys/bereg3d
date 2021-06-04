@@ -9,8 +9,8 @@ block head
     //link(rel='stylesheet' href="static/magnific-popup/magnific-popup.css")
 block scripts
     script(src='./static/jquery.min.js')
-    script(src='assets/s3d/scripts/vendors.bundle.js')
-    script(src='assets/s3d/scripts/index.bundle.js')
+    script(src='assets/s3d/scripts/s3d-vendors.bundle.js')
+    script(src='assets/s3d/scripts/s3d.bundle.js')
     //script(src='static/magnific-popup/jquery.magnific-popup.min.js')
 
 block content
@@ -27,7 +27,7 @@ block content
                         span.s3d-filter__open-num.js-s3d-filter__open-num
                     .s3d-controller__elem.js-s3d-controller__elem
                         button.s3d-select.js-s3d-select.active(type='button' data-type='complex')
-                             +svg('cube')
+                             +svg('cube').icon-cube
                              span genplan
                         button.s3d-select.js-s3d-select(type='button' data-type='floor' disabled)
                             +svg('floor-plan')
@@ -118,7 +118,8 @@ block content
                         img( src="./assets/s3d/images/icon/small-logo.svg")
                         //img( src='.get_template_directory_uri().'+"/assets/s3d/images/icon/small-logo.svg")
                     .s3d-floor__helper-close
-                        img( src="./assets/s3d/images/icon/close.svg")
+                        +svg('close')
+                        //img( src="./assets/s3d/images/icon/close.svg")
                     .s3d-floor__helper-img
                         img(src="" class="js-s3d-floor__helper-img")
                     .s3d-floor__helper-type
@@ -135,7 +136,10 @@ block content
                         | Заг. пл:
                         .js-s3d-floor__helper-place
                         | м2
-                    button(type='button').button.s3d-floor__helper-button.js-s3d-floor__helper-button
+                    //button(type='button').button.s3d-floor__helper-button.js-s3d-floor__helper-button
+                    a(href="#").link.s3d-floor__helper-button.js-s3d-floor__helper-button
+                        span Детальніше
+                        +svg('arrow').link__arrow
                     .s3d-floor__helper-bg
 block footer
     footer.page__footer-wrapper.s3d__footer

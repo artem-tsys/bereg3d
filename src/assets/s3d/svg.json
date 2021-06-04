@@ -1,24 +1,24 @@
 {
   "complex": {
-    "32": {
-      "path": "/wp-content/themes/bereg/assets/s3d/images/svg/complex/32.svg",
+    "25": {
+      "path": "/wp-content/themes/bereg/assets/s3d/images/svg/complex/25.svg",
       "dir": "/wp-content/themes/bereg/assets/s3d/images/svg/complex/",
-      "name": "32.svg"
+      "name": "25.svg"
     },
-    "58": {
-      "path": "/wp-content/themes/bereg/assets/s3d/images/svg/complex/58.svg",
+    "55": {
+      "path": "/wp-content/themes/bereg/assets/s3d/images/svg/complex/55.svg",
       "dir": "/wp-content/themes/bereg/assets/s3d/images/svg/complex/",
-      "name": "58.svg"
+      "name": "55.svg"
     },
-    "92": {
-      "path": "/wp-content/themes/bereg/assets/s3d/images/svg/complex/92.svg",
+    "110": {
+      "path": "/wp-content/themes/bereg/assets/s3d/images/svg/complex/110.svg",
       "dir": "/wp-content/themes/bereg/assets/s3d/images/svg/complex/",
-      "name": "92.svg"
+      "name": "110.svg"
     },
-    "119": {
-      "path": "/wp-content/themes/bereg/assets/s3d/images/svg/complex/119.svg",
+    "165": {
+      "path": "/wp-content/themes/bereg/assets/s3d/images/svg/complex/165.svg",
       "dir": "/wp-content/themes/bereg/assets/s3d/images/svg/complex/",
-      "name": "119.svg"
+      "name": "165.svg"
     }
   }
 }

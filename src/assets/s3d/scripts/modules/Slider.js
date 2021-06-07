@@ -1,4 +1,3 @@
-// import $ from 'jquery';
 import Svg from './Svg';
 import isDevice from './checkDevice';
 import $ from "jquery";
@@ -216,7 +215,7 @@ class Slider {
       url: elem.src || elem.dataset.id || 'пусто',
       type: type || 'error',
       text: 'new'
-    })
+    });
     $.ajax('/wp-admin/admin-ajax.php', {
       method: 'POST',
       data: {

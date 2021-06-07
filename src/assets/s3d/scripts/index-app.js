@@ -10,8 +10,8 @@ window.nameProject = 'bereg';
 window.defaultProjectPath = `/wp-content/themes/${window.nameProject}/assets`;
 window.defaultModulePath = `/wp-content/themes/${window.nameProject}/assets/s3d/`;
 window.defaultStaticPath = `/wp-content/themes/${window.nameProject}/static/`;
-window.status = 'local';
-// window.status = 'dev';
+// window.status = 'local';
+window.status = 'dev';
 // window.status = 'prod';
 
 document.addEventListener('DOMContentLoaded',function (global) {
@@ -68,9 +68,10 @@ function init() {
         loader(resolve)
     }).then(value => {
         document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
-        if (!value.fastSpeed) {
-            config.complex.imageUrl += 'mobile/'
-        }
+        // if (!value.fastSpeed) {
+        //     config.complex.imageUrl += 'mobile/'
+        // }
+        
         if (isDevice('mobile')) {
             $('.js-s3d__slideModule').addClass('s3d-mobile')
         }

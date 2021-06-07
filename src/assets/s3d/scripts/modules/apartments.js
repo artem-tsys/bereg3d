@@ -1,4 +1,4 @@
-import $ from 'jquery';
+// import $ from 'jquery';
 class Apartments{
     constructor(data) {
         this.idCopmlex = data.idCopmlex;
@@ -124,8 +124,8 @@ class Apartments{
     }
 
     openPopup() {
-        $('.js-s3d-popup__mini-plan').addClass('active');
-        $('.js-s3d-popup__mini-plan__close').on('click', () => $('.js-s3d-popup__mini-plan').removeClass('active') );
+      $('.js-s3d-popup__mini-plan').addClass('active');
+      $('.js-s3d-popup__mini-plan__close').on('click', () => $('.js-s3d-popup__mini-plan').removeClass('active') );
     }
 }
 

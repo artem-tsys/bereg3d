@@ -79,7 +79,7 @@ class App {
         this.history = new History({scrollToBlock:this.scrollToBlock,animateBlock:this.animateBlock });
         this.history.init();
 
-        this.getFlatList('/wp-admin/admin-ajax.php', this.filterInit );
+        this.getFlatList('/wp-admin/admin-ajax.php', this.filterInit);
 
         this.loader.show();
         let config = this.config.complex;

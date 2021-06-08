@@ -59,7 +59,7 @@ function init() {
         apart: {
             id: 'js-s3d__wrapper'
         },
-        openHouses : [1, 2]
+        openHouses : [1]
     };
 
 

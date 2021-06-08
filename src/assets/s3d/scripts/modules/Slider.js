@@ -18,7 +18,7 @@ class Slider {
     this._wrapper = $('.js-s3d__wrapper__' + this._wrapperId);
     this._ctx = document.getElementById('js-s3d__'+this._wrapperId).getContext('2d'); // Контекст
     this._wrapperEvent = '.js-s3d__svgWrap';
-    this._height = 1080;
+    this._height = 1213;
     this._width = 1920;
     this.flagMouse = false;
     this.currentSlide =  data.activeSlide;

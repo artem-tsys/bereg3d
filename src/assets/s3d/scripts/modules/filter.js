@@ -215,7 +215,8 @@ class Filter {
     }
     filterFlat(data) {
         this.currentAmountFlat = 0;
-        data.filter(flat => {
+        this.filterSelect = data.filter(flat => {
+            console.log(219, flat);
             for(let param in this.filter) {
                 if(+flat['sale'] !== 1 || !this.openHouses.includes(+flat[this.nameFilterFlat.house])) return;
                 if(
@@ -233,11 +234,11 @@ class Filter {
                     }
                 }
             }
-
+            console.log(237, this.filter);
             if (this.filter.house.value.length === 0 && this.filter.rooms.value.length === 0){
                 return {}
             }
-
+            console.log(241, flat[this.nameFilterFlat.house]);
             if(flat[this.nameFilterFlat.house] !== undefined &&
                 !this.filterSelect[flat[this.nameFilterFlat.house]]
             ) {
@@ -255,6 +256,7 @@ class Filter {
             this.currentAmountFlat += 1;
             return flat;
         });
+        console.log(this.filterSelect);
       return this.filterSelect;
     }
     getFilterParam(){

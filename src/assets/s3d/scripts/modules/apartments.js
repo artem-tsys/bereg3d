@@ -97,6 +97,11 @@ class Apartments{
 
     setPlaneInPage(response){
       $('#js-s3d__'+ this.idCopmlex).html(JSON.parse(response));
+      this.dataContainers = {
+        // type: document.querySelector('[data-type="type"]'),
+        flat: document.querySelector('[data-type="flat"]'),
+        area: document.querySelector('[data-type="area"]'),
+      };
       this.loader.hide(this.type);
       $('.flat__floor').on('click', 'polygon', this.openPopup);
       // $('#js-s3d__wrapper__apart .form-js').on('click',()=> $('.common-form-popup-js').addClass('active'));
@@ -117,7 +122,14 @@ class Apartments{
       this.image = document.querySelector('[data-flat-image]');
       this.pathImages = JSON.parse(this.image.dataset.src);
       this.initPlan(this.pathImages);
-  
+      
+      const svgContainer = document.querySelector('.flat__floor');
+      svgContainer.addEventListener('mouseleave', (event) => {
+        this.hoverDataHundler(event.target, this.dataContainers);
+      });
+      svgContainer.addEventListener('mouseover', (event) => {
+        this.hoverDataHundler(event.target, this.dataContainers);
+      });
       $('.flat__img').magnificPopup({
         type: 'image',
       });
@@ -126,6 +138,25 @@ class Apartments{
     openPopup() {
       $('.js-s3d-popup__mini-plan').addClass('active');
       $('.js-s3d-popup__mini-plan__close').on('click', () => $('.js-s3d-popup__mini-plan').removeClass('active') );
+    }
+    
+    updateHoverFlat(containers, data) {
+      const wrap = containers;
+      // wrap.type.innerHTML = data.flat_id;
+      wrap.flat.innerHTML = data.rooms;
+      wrap.area.innerHTML = data.area;
+    }
+    
+    hoverDataHundler(hoverElement, dataContainers) {
+      if (hoverElement.tagName === 'polygon') {
+        const data = hoverElement.dataset;
+        this.updateHoverFlat(dataContainers, data);
+      } else {
+        Object.values(dataContainers).forEach((element) => {
+          const el = element;
+          el.innerHTML = element.dataset.defaultValue;
+        });
+      }
     }
 }
 

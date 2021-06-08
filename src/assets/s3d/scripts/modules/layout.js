@@ -98,8 +98,6 @@ class Layout {
                             <div class="s3d-nav-floor__arrow">
                               <svg width="9" height="40" viewBox="0 0 9 40"  class="s3d-nav-floor__up js-s3d-nav-floor__up s3d-nav-floor__arrow-up" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 7L4.5 5.90104e-07L4.32743e-06 7L9 7Z" /><path d="M5 40L4 40L4.00001 7L5 7L5 40Z" /></svg>
                               <svg width="9" height="40" viewBox="0 0 9 40"  class="s3d-nav-floor__down js-s3d-nav-floor__down s3d-nav-floor__arrow-down" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 7L4.5 5.90104e-07L4.32743e-06 7L9 7Z" /><path d="M5 40L4 40L4.00001 7L5 7L5 40Z" /></svg>
-<!--                                <img class="s3d-nav-floor__up js-s3d-nav-floor__up" src="../images/icon/floor-arrow.svg" alt="arrow" class="s3d-nav-floor__arrow-up">-->
-<!--                                <img class="s3d-nav-floor__down js-s3d-nav-floor__down" src="../images/icon/floor-arrow.svg" alt="arrow" class="s3d-nav-floor__arrow-down">-->
                             </div>
                              <button type="button" class="s3d-nav-floor__button js-s3d-nav-floor__select">
                                 <span>${textContent.layout.selectFloor}:</span>
@@ -229,7 +227,7 @@ class Layout {
             if (param.image) {
                 $('.js-s3d-floor__helper-img').attr('src', param.image);
             }
-            if (param.type) $('.js-s3d-floor__helper-type').html(param.type);
+            if (param.type) $('.js-s3d-floor__helper-type').html(param.num);
             if (param.rooms) $('.js-s3d-floor__helper-flat').html(param.rooms);
             if (param.square) $('.js-s3d-floor__helper-area').html(param.square);
             if (param.living) $('.js-s3d-floor__helper-place').html(param.living);

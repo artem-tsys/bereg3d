@@ -126,7 +126,6 @@ class App {
       //         $('.js-first-info').css({'visibility' :'visible'});
       //     })
       // }
-      
       this.resize();
     }
   
@@ -312,7 +311,6 @@ class App {
         layers[0].classList.add('translate-layer__'+ clas);
         setTimeout(()=> layers[0].classList.add('active') ,100);
         setTimeout(()=> this.animateFlag = true ,1000)
-
     }
 
     helpsInfo(){

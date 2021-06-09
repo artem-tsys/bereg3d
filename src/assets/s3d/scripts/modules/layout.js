@@ -206,9 +206,16 @@ class Layout {
         $('#js-floor svg polygon').on('mouseout', () => $('.s3d-floor__helper').css({'top': '', 'left': '', 'opacity': ''}));
     }
 
-
+    // вычислить позицию контента,
 
     updateInfoFloor(e){
+        function checkPosContent(pos, size, sizeWrap, centerScreen, scale, padding) {
+            if ((pos < centerScreen) + (centerScreen / 2) && pos > centerScreen - (centerScreen / 2)) return pos;
+            if (pos >= centerScreen) {
+                return pos - (size / 2) - padding - (sizeWrap / 2)
+            }
+            return pos + (size / 2) + padding + (sizeWrap / 2)
+        }
         // function getImage(src, callback){
         //     $.ajax({
         //         type: 'POST',
@@ -222,7 +229,21 @@ class Layout {
             $('.s3d-floor__helper').css({'opacity': 0});
             const Xinner = e.pageX || e.targetTouches[0].pageX;
             const Yinner = e.pageY || e.targetTouches[0].pageY;
-
+    
+            const target = $(e.target);
+            const height = target.outerHeight();
+            const width = target.outerWidth();
+            const position = target.offset();
+            const centerX = position.left + (width / 2);
+            const centerY = position.top + (height / 2);
+            const x = checkPosContent(centerX, width, $('.s3d-floor__helper').width(), $(window).width() / 2, 1, 20);
+            let y = checkPosContent(centerY, height, $('.s3d-floor__helper').height(), $(window).height() / 2, 1, 20);
+    
+            
+            // else position in center screen translate on top
+            if (x === centerX && y === centerY) y = centerY - ($('.s3d-floor__helper').height() / 2);
+            $('.s3d-floor__helper').css({ left: `${x}px`, top: `${y}px` });
+            
             const param = $(e.target)[0].closest('g').dataset;
             if (param.image) {
                 $('.js-s3d-floor__helper-img').attr('src', param.image);
@@ -230,9 +251,10 @@ class Layout {
             if (param.type) $('.js-s3d-floor__helper-type').html(param.num);
             if (param.rooms) $('.js-s3d-floor__helper-flat').html(param.rooms);
             if (param.square) $('.js-s3d-floor__helper-area').html(param.square);
-            if (param.living) $('.js-s3d-floor__helper-place').html(param.living);
+            // if (param.living) $('.js-s3d-floor__helper-place').html(param.living);
 
-            $('.s3d-floor__helper').css({'visibility': 'visible','top': Yinner - 120 , 'left': Xinner, 'opacity': 1});
+            $('.s3d-floor__helper').css({'visibility': 'visible', 'top': y , 'left': x, 'opacity': 1});
+            // $('.s3d-floor__helper').css({'visibility': 'visible','top': Yinner , 'left': Xinner, 'opacity': 1});
 
         } else {
             $('.s3d-floor__helper').css({'visibility': 'hidden','top': '', 'left': '', 'opacity': ''})

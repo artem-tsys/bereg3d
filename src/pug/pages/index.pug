@@ -67,6 +67,13 @@ block content
                                 input( class='js-s3d-filter__rooms--input' type='checkbox' data-type='rooms' data-rooms=3 id='rooms-3' )
                                 label.s3d-filter__rooms--label(for='rooms-3')
                                     | 3
+                    .s3d-filter__house.js-s3d-filter__house.js-s3d-filter__select
+                        .s3d-filter-select__title Кімнат
+                        .s3d-filter-select__list
+                            .s3d-filter-select__input--wrap
+                                input( class='js-s3d-filter__house--input' type='checkbox' data-type='house' data-house=1 id='house-1' )
+                                label.s3d-filter__house--label(for='house-1')
+                                    | 1
                     .s3d-filter__floor.js-s3d-filter__floor
                         .s3d-filter-select__title Поверх
                         .s3d-filter-select__list.js-filter-range
@@ -129,13 +136,9 @@ block content
                         | Кімнат:
                         .js-s3d-floor__helper-flat
                     .s3d-floor__helper-area
-                        | Житл. пл:
+                        | Заг. пл:
                         .js-s3d-floor__helper-area
                             span м2
-                    .s3d-floor__helper-place
-                        | Заг. пл:
-                        .js-s3d-floor__helper-place
-                        | м2
                     //button(type='button').button.s3d-floor__helper-button.js-s3d-floor__helper-button
                     a(href="#").link.s3d-floor__helper-button.js-s3d-floor__helper-button
                         span Детальніше

@@ -10,7 +10,8 @@ class Filter {
        this.nameFilterFlat = {
            area: 'all_room',
            living: 'life_room',
-           house: 'build_name',
+           house: 'build',
+           // house: 'build_name',
            floor: 'floor',
            rooms: 'rooms',
            price: 'price',
@@ -67,14 +68,17 @@ class Filter {
         // фильтр svg , ищет по дата атрибуту, нужно подстраивать атрибут и класс обертки
         const data = this.applyFilter(this.flatList);
         this.setAmountSelectFlat(this.currentAmountFlat);
-        for( let key in data) {
+        console.log('data', data);
+        for(let key in data) {
+              console.log('data[key]', data[key]);
               if(+data[key].length > 0) {
                   // $('#js-s3d__wrapper__complex polygon[data-build="'+key+'"]').css({'opacity':0.5});
                   data[key].forEach(
                       floor => {
-                          if ($('.js-s3d__svg-container__complex').length > 0)
+                          if ($('.js-s3d__svg-container__complex').length > 0){
+	                          $('#js-s3d__wrapper__complex polygon[data-build="'+key+'"][data-floor="' + floor + '"]').css({'opacity': 0.5})
+                          }
                           // if ($('.js-s3d__svg-container' + key).length > 0)
-                              $('#js-s3d__wrapper__complex polygon[data-build="'+key+'"][ data-floor="' + floor + '"]').css({'opacity': 0.5})
                       }
                   )
               }
@@ -215,8 +219,7 @@ class Filter {
     }
     filterFlat(data) {
         this.currentAmountFlat = 0;
-        this.filterSelect = data.filter(flat => {
-            console.log(219, flat);
+        data.filter(flat => {
             for(let param in this.filter) {
                 if(+flat['sale'] !== 1 || !this.openHouses.includes(+flat[this.nameFilterFlat.house])) return;
                 if(
@@ -234,7 +237,6 @@ class Filter {
                     }
                 }
             }
-            console.log(237, this.filter);
             if (this.filter.house.value.length === 0 && this.filter.rooms.value.length === 0){
                 return {}
             }
@@ -256,7 +258,7 @@ class Filter {
             this.currentAmountFlat += 1;
             return flat;
         });
-        console.log(this.filterSelect);
+        console.log('this.filterSelect', this.filterSelect);
       return this.filterSelect;
     }
     getFilterParam(){

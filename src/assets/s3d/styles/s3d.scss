@@ -1344,11 +1344,11 @@
     }
 
     .flat-link-path:hover{
-      opacity: .9;
+      opacity: .7;
     }
 
-    .flat-link-path.current__flat polygon{
-      opacity: 0.8;
+    .flat-link-path.current__flat {
+      opacity: 0.5;
     }
 
     .flat-parameters{
@@ -1600,7 +1600,7 @@
 
   .flat-link-path:hover,
   & polygon:hover {
-    opacity: .8;
+    opacity: .7;
   }
 }
 

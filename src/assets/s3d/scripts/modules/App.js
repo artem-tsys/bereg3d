@@ -49,10 +49,11 @@ class App {
         this.compass = {
             set: active => {
                 let deg = 0;
-                if( active ){
+                if( active >= 0 ){
                     this.compass.current =  active;
                     deg = 360 / 179 * active + (360 / 179  * this.compass.default);
                 } else {
+                    console.log('active', active);
                     deg = this.compass.defaultDeg;
                 }
                 $('.s3d-filter__compass svg').css('transform','rotate(-'+ deg +'deg)');
@@ -66,12 +67,12 @@ class App {
             save: deg => {
                 this.compass.lastDeg = deg;
             },
-            current: 0,
-            default : 57,
-            defaultDeg : -230,
+            current: 25,
+            default : 150,
+            defaultDeg : 0,
             degApart : -310,
             degFloor : -230,
-            lastDeg: -230
+            lastDeg: 0
         }
     }
 

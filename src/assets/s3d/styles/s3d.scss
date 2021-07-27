@@ -1258,9 +1258,10 @@
       align-items: center;
       justify-content: center;
     }
-    &__apart{
+    &__apart {
       //height: initial;
       min-height: 100%;
+      height: auto;
       padding: 130px 20px 50px;
       justify-content: center;
       overflow: hidden;

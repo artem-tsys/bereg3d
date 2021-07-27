@@ -110,6 +110,7 @@ class Apartments{
       //     $('.js-s3d-select__floor').click();
       // });
       $('.js-s3d-popup__mini-plan svg').on('click', 'polygon', (e)=>{
+        console.log(e);
         this.activeSvg = $(e.target).closest("svg");
         $(this.activeSvg).css({'fill':''});
         $('.s3d-floor__helper').css({'opacity':0,'top':'-10000px'});

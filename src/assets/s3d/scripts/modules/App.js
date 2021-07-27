@@ -56,7 +56,7 @@ class App {
                     console.log('active', active);
                     deg = this.compass.defaultDeg;
                 }
-                $('.s3d-filter__compass svg').css('transform','rotate(-'+ deg +'deg)');
+                $('.s3d-filter__compass svg').css('transform','rotate('+ deg +'deg)');
             },
             setApart: () => {
                 $('.s3d-filter__compass svg').css('transform','rotate('+ this.compass.degApart +'deg)');

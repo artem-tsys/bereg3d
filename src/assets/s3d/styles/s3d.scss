@@ -308,7 +308,7 @@
     z-index: 210;
     opacity: 0;
     box-shadow: 0 30px 50px rgba(59, 68, 86, 0.15);
-    transform: translate(-150%, 0);
+    transform: translate(-100%, 0);
     transition: opacity 0.2s ease;
     &-logo{
       position: relative;
@@ -929,6 +929,7 @@
       fill: $wc;
       color: $wc;
       svg {
+        stroke: $wc;
         transform-origin: center;
       }
     }
@@ -1283,11 +1284,6 @@
   }
   &__apart {
     display: flex;
-    //display: grid;
-    //grid-template-areas: 'desc image image'
-    //'plan buttons buttons';
-    //grid-template-columns: 430px 1fr 1fr;
-    //grid-template-rows: auto 170px;
     height: 100%;
     width: 100%;
     position: relative;

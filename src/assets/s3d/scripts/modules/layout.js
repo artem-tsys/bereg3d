@@ -209,13 +209,19 @@ class Layout {
     // вычислить позицию контента,
 
     updateInfoFloor(e){
-        function checkPosContent(pos, size, sizeWrap, centerScreen, scale, padding) {
-            if ((pos < centerScreen) + (centerScreen / 2) && pos > centerScreen - (centerScreen / 2)) return pos;
-            if (pos >= centerScreen) {
-                return pos - (size / 2) - padding - (sizeWrap / 2)
-            }
-            return pos + (size / 2) + padding + (sizeWrap / 2)
-        }
+        // function checkPosX(pos, size, centerScreen, scale, padding) {
+        //     if (pos < centerScreen) return pos;
+        //     if (pos >= centerScreen) {
+        //         return pos - size - padding;
+        //     }
+        //     return pos + size + padding
+        // }
+        // function checkPosY(pos, size, screen, scale, padding) {
+        //     if (pos + size > screen - padding) {
+        //         return screen - size - padding;
+        //     }
+        //     return pos;
+        // }
         // function getImage(src, callback){
         //     $.ajax({
         //         type: 'POST',
@@ -225,24 +231,35 @@ class Layout {
         //         success: data => callback(data)
         //     })
         // }
+
         if (e.target.tagName === 'polygon') {
-            $('.s3d-floor__helper').css({'opacity': 0});
-            const Xinner = e.pageX || e.targetTouches[0].pageX;
-            const Yinner = e.pageY || e.targetTouches[0].pageY;
+            // $('.s3d-floor__helper').css({'opacity': 0});
+            // const Xinner = e.pageX || e.targetTouches[0].pageX;
+            // const Yinner = e.pageY || e.targetTouches[0].pageY;
     
-            const target = $(e.target);
-            const height = target.outerHeight();
-            const width = target.outerWidth();
-            const position = target.offset();
-            const centerX = position.left + (width / 2);
-            const centerY = position.top + (height / 2);
-            const x = checkPosContent(centerX, width, $('.s3d-floor__helper').width(), $(window).width() / 2, 1, 20);
-            let y = checkPosContent(centerY, height, $('.s3d-floor__helper').height(), $(window).height() / 2, 1, 20);
+            const target = e.target;
+            const tooltipElem = document.querySelector('.s3d-floor__helper');
+            tooltipElem.style.opacity = 0;
+            // const target = e.target.getBBox();
+            // const height = target.height;
+            // const width = target.width;
+            // let x = checkPosX(target.x, width, $(window).width(), 1, 20);
+            // let y = checkPosY(target.y, height, $(window).height(), 1, 20);
+            let coords = target.getBoundingClientRect();
+            let left = coords.left + (coords.width - tooltipElem.offsetWidth) / 2;
+            if (left < 0) left = 0; // не заезжать за левый край окна
     
+            let top = coords.top - tooltipElem.offsetHeight - 25;
+            if (top < 0) { // если подсказка не помещается сверху, то отображать её снизу
+                top = coords.top + coords.height + 25;
+            }
+            tooltipElem.style.visibility = 'visible';
+            tooltipElem.style.opacity = '1';
+            tooltipElem.style.left = left + 'px';
+            tooltipElem.style.top = top + 'px';
             
-            // else position in center screen translate on top
-            if (x === centerX && y === centerY) y = centerY - ($('.s3d-floor__helper').height() / 2);
-            $('.s3d-floor__helper').css({ left: `${x}px`, top: `${y}px` });
+            
+            // $('.s3d-floor__helper').css({ left: `${x}px`, top: `${y}px` });
             
             const param = $(e.target)[0].closest('g').dataset;
             if (param.image) {
@@ -253,7 +270,7 @@ class Layout {
             if (param.square) $('.js-s3d-floor__helper-area').html(param.square);
             // if (param.living) $('.js-s3d-floor__helper-place').html(param.living);
 
-            $('.s3d-floor__helper').css({'visibility': 'visible', 'top': y , 'left': x, 'opacity': 1});
+            // $('.s3d-floor__helper').css({'visibility': 'visible', 'top': y , 'left': x, 'opacity': 1});
             // $('.s3d-floor__helper').css({'visibility': 'visible','top': Yinner , 'left': Xinner, 'opacity': 1});
 
         } else {

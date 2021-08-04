@@ -5,7 +5,7 @@
 		</symbol>
 	
 		<symbol id="icon-close" viewBox="0 0 10 10">
-			<path fill-rule="evenodd" clip-rule="evenodd" d="M4.999 4.046L9.045 0 10 .954 5.953 5 10 9.046 9.045 10 5 5.954.955 9.997 0 9.043 4.044 5 0 .957.955.003l4.044 4.043z"></path>
+			<path clip-rule="evenodd" d="M4.999 4.046L9.045 0 10 .954 5.953 5 10 9.046 9.045 10 5 5.954.955 9.997 0 9.043 4.044 5 0 .957.955.003l4.044 4.043z"></path>
 		</symbol>
 	
 		<symbol id="icon-compass2" viewBox="0 0 59 56">

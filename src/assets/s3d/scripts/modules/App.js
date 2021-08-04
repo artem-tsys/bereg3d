@@ -70,8 +70,8 @@ class App {
             current: 25,
             default : 150,
             defaultDeg : 0,
-            degApart : 0,
-            degFloor : 345,
+            degApart : 7,
+            degFloor : 7,
             lastDeg: 0
         }
     }

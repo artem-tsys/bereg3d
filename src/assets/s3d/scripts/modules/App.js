@@ -51,7 +51,7 @@ class App {
                 let deg = 0;
                 if( active >= 0 ){
                     this.compass.current =  active;
-                    deg = 360 / 179 * active + (360 / 179  * this.compass.default);
+                    deg = 360 / 178 * active + (360 / 178  * this.compass.default);
                 } else {
                     console.log('active', active);
                     deg = this.compass.defaultDeg;
@@ -68,8 +68,8 @@ class App {
                 this.compass.lastDeg = deg;
             },
             current: 25,
-            default : 150,
-            defaultDeg : 0,
+            default : 153,
+            defaultDeg : 7,
             degApart : 7,
             degFloor : 7,
             lastDeg: 0
